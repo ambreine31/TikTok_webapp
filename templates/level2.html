@@ -6,39 +6,27 @@
     <link href="https://fonts.googleapis.com/css?family=VT323" rel="stylesheet">
     <link href="/static/css/my_style.css" rel="stylesheet" type="text/css">
     <style>
-        #div1{
-            background-image:url('/static/img/rainbow.gif');
-            background-size: cover;
-        }
-        #div2{
-            background-image:url('/static/img/winter7.webp');
-            background-size: cover;
+        body{
+            background: black;
         }
         .border-one {
         border: 20px solid transparent;
-        border-image: url('/static/img/frame1.png') 50 round;
+        border-image: url('/static/img/frame4.png') 35% round;
         width:500px;
         float:left; 
         margin-left:300px;
+        margin-top: 10px;
         }
         .border-two {
         border: 20px solid transparent;
-        border-image: url('/static/img/frame1.png') 35% round;
+        border-image: url('/static/img/rainbow.gif') 35% round;
         width:500px;
         float:right; 
         margin-right:300px;
         }
-        .border-three {
-        border: 20px solid transparent;
-        border-image: url('/static/img/frame1.png') 100% round;
-        }
-        .border-four {
-        border: 20px solid transparent;
-        border-image: url('/static/img/frame1.png') 20 stretch;
-        }
         .test1{
         font-family: 'karma_futureregular';
-        color: #A40638;
+        color: white;
         margin-left:700px;
         font-size: 70px;
         }
@@ -94,7 +82,7 @@
         }
         .gems-text{
             font-family: 'karma_futureregular';
-            color: #A40638;
+            color: white;
             margin-left:500px;
             font-size: 30px;
         }
@@ -102,14 +90,14 @@
     </style>
   </head>
   <body>
-    <nav class="navbar sticky-top navbar-expand-lg navbar-light" style="background-color: white;">
+    <nav class="navbar sticky-top navbar-expand-lg navbar-dark" style="background-color: black;">
         <div class="container">
             <h1 class="gems-text">Gems collected : </h1>
           <a class="navbar-brand" href="#">
-                <img class="img-nav" src="/static/img/frame1.png" alt="">
+                <img class="img-nav" src="/static/img/frame4.png" alt="">
           </a>
           <a class="navbar-brand" href="#">
-            <img class="img-nav" src="/static/img/frame1.png" alt="">
+            <img class="img-nav" src="/static/img/frame4.png" alt="">
           </a>
         </div>
       </nav>
@@ -124,7 +112,7 @@
         <a class="btn primary">Completed</a>
     </div>
     <div class="border-one">
-      {{ t|safe }}
+          {{ t|safe }}
     </div>
     <div class="border-two">
           {{ t|safe }}

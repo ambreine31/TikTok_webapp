@@ -1,0 +1,79 @@
+@font-face {
+    font-family: 'karma_futureregular';
+    src: url('/static/fonts/karmafuture-webfont.woff2') format('woff2'),
+        url('/static/fonts/karmafuture-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'albaregular';
+    src: url('/static/fonts/alba____-webfont.woff2') format('woff2'),
+         url('/static/fonts/alba____-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'alba_matterregular';
+    src: url('/static/fonts/albam___-webfont.woff2') format('woff2'),
+         url('/static/fonts/albam___-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'alba_superregular';
+    src: url('/static/fonts/albas___-webfont.woff2') format('woff2'),
+         url('/static/fonts/albas___-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'arcaderegular';
+    src: url('/static/fonts/arcade-webfont.woff2') format('woff2'),
+         url('/static/fonts/arcade-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'karmatic_arcaderegular';
+    src: url('/static/fonts/ka1-webfont.woff2') format('woff2'),
+         url('/static/fonts/ka1-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'planet_kosmosregular';
+    src: url('/static/fonts/plank___-webfont.woff2') format('woff2'),
+         url('/static/fonts/plank___-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'stitch_warrior_demoregular';
+    src: url('/static/fonts/stitchwarrior_demo-webfont.woff2') format('woff2'),
+         url('/static/fonts/stitchwarrior_demo-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'vcr_osd_monoregular';
+    src: url('/static/fonts/vcr_osd_mono-webfont.woff2') format('woff2'),
+         url('/static/fonts/vcr_osd_mono-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
