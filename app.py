@@ -1,10 +1,7 @@
 from flask import Flask, render_template, request, jsonify, make_response,g, redirect, session, Response, url_for, flash
 import random
-import time
 import requests
 from TikTokApi import TikTokApi
-import random
-import numpy as np
 import pickle
 api = TikTokApi()
 
