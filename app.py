@@ -67,6 +67,7 @@ def Get_TikToks(toks):
     print("here")
     pickle.dump( db_f, open( "db.p", "wb" ) )
 
+"""
 @app.route("/", methods=['GET', 'POST'])
 def login():
     if request.method == 'POST':
@@ -85,6 +86,23 @@ def login():
             except:
                 print('user error')
                 return redirect('/')
+    return render_template('login.html')
+"""
+@app.route("/", methods=['GET', 'POST'])
+def login():
+    if request.method == 'POST':
+        session.pop('user_id', None)
+
+        option = request.form['submit_button']
+
+        if(option == "user"):
+            username = request.form['username']
+            print(username)
+            toks = api.userLikedbyUsername(username, count=200)
+            Get_TikToks(toks)
+            session['user_id'] = 1
+            return redirect(url_for('level1'))
+
     return render_template('login.html')
 
 @app.route("/level1")
