@@ -7,30 +7,25 @@
     <link href="/static/css/my_style.css" rel="stylesheet" type="text/css">
     <style>
         body{
-            background: black;
+            background: url('/static/img/brick.jpg');
         }
         .border-one {
-        border: 20px solid transparent;
-        border-image: url('/static/img/clouds2.gif') 50 round;
         width:500px;
         float:left; 
         margin-left:300px;
         margin-top: 10px;
         }
         .border-two {
-        border: 20px solid transparent;
-        border-image: url('/static/img/clouds2.gif') 50 round;
         width:500px;
         float:right; 
         margin-right:300px;
         margin-top: 10px;
         }
-        
-        .test7{
-        font-family: 'planet_kosmosregular';
-        color: black;
+        .test9{
+        font-family: 'painterzregular';
+        color: white;
         margin-left:800px;
-        font-size: 70px;
+        font-size: 120px;
         }
         
         .img-level {
@@ -38,45 +33,19 @@
         height: 10%;
         }
 
-        .btn {
-        font-family: "VT323", monospace;
-        background: #7C7C7C;
-        border-bottom: 6px inset rgba(0, 0, 0, 0.5);
-        border-left: 6px inset rgba(0, 0, 0, 0.5);
-        border-right: 6px inset rgba(255, 255, 255, 0.5);
-        border-top: 6px inset rgba(255, 255, 255, 0.5);
-        box-sizing: border-box;
-        color: white;
-        cursor: pointer;
-        display: inline-block;
-        font-size: 2.2rem;
-        margin: 1rem;
-        min-width: 200px;
-        padding: .5rem;
-        text-transform: uppercase;
-        width: auto;
-        }
-        .btn:focus, .btn:hover {
-        background: #BCBCBC;
-        }
-
-        .btn.primary {
-        background: #DAA520;
-        }
-        .btn.primary:focus, .btn.primary:hover {
-        background: #FFD700;
-        }
         .completed-left{
-            margin-left:450px;
+            margin-left:490px;
             font-size: 24px;
             color: white;
             float:left; 
+            margin-top: 10px;
         }
         .completed-right{
-            margin-right:450px;
+            margin-right:440px;
             font-size: 24px;
             color: white;
             float:right; 
+            margin-top: 10px;
         }
 
         .img-nav{
@@ -84,32 +53,21 @@
             height: 80px;
         }
         .gems-text{
-            font-family: 'planet_kosmosregular';
+            font-family: 'painterzregular';
             color: white;
             margin-left:500px;
-            font-size: 30px;
+            font-size: 50px;
         }
-        .back-level{
-            background-image:url('/static/img/rainbow.gif');
+        .btn-brick{
+        font-family: 'painterzregular', sans-serif;
+        display: inline-block;
+        color: white;
+        background-color: #ffa4bd;
+        border: none;
+        height: 40px;
+        width: 100px;
+        cursor:pointer;
         }
-        .neon { 
-            padding: 20px 20px; 
-            display: inline-block; 
-            color: #008000; 
-            letter-spacing: 2px; 
-            text-transform: uppercase; 
-            text-decoration: none; 
-            font-family: 'planet_kosmosregular';
-            font-size: 1em; 
-            overflow: hidden; 
-        } 
-  
-        /*creating animation effect*/ 
-        .neon:hover { 
-            color: #111; 
-            background: #bc13fe; 
-            box-shadow: 0 0 50px #bc13fe; 
-        } 
         .navbar-brand{
           visibility:hidden;
         }
@@ -117,30 +75,28 @@
     </style>
   </head>
   <body>
-    <nav class="navbar sticky-top navbar-expand-lg navbar-dark" style="background-color: black;">
+    <nav class="navbar sticky-top navbar-expand-lg navbar-dark" style="background: url('/static/img/brick.jpg');">
         <div class="container">
             <h1 class="gems-text">Gems collected : </h1>
           <a class="navbar-brand" id = "gem1" href="#">
-                <img class="img-nav" src="/static/img/peace.png" alt="">
+                <img class="img-nav" src="/static/img/heart.png" alt="">
           </a>
           <a class="navbar-brand" id = "gem2" href="#">
-            <img class="img-nav" src="/static/img/peace.png" alt="">
+            <img class="img-nav" src="/static/img/heart.png" alt="">
           </a>
         </div>
       </nav>
     <div>
-    <br/><br/><br/>
-    <div class="back-level">
-    <br/>
-    <h1 class="test7"> Level 2</h1>
+    <br/><br/>
+    <h1 class="test9"> Level 3</h1>
+    <br/><br/>
+    <div class="completed-left">
+        <button type="submit" class="btn-brick" onclick="completed_left(this)">Completed</button>
     </div>
-    <br/><br/><br/>
-    <div class="completed-left" onclick="completed_left(this)">
-        <a class="neon">Completed</a> 
+    <div class="completed-right">
+        <button type="submit" class="btn-brick" onclick="completed_right(this)">Completed</button>
     </div>
-    <div class="completed-right" onclick="completed_right(this)">
-        <a class="neon">Completed</a> 
-    </div>
+    <br/><br/>
     <div class="border-one" id = "div_left">
           {{ t1|safe }}
     </div>
@@ -161,7 +117,7 @@
       if(div_right.style.visibility == 'hidden'){
         var gem2 = document.getElementById('gem2');
         gem2.style.visibility = 'visible';
-        window.location.href = '/transition2';
+        window.location.href = '/final';
       }
       else{
         var gem1 = document.getElementById('gem1');
@@ -178,7 +134,7 @@
       if(div_left.style.visibility == 'hidden'){
         var gem2 = document.getElementById('gem2');
         gem2.style.visibility = 'visible';
-        window.location.href = '/transition2';
+        window.location.href = '/final';
       }
       else{
         var gem1 = document.getElementById('gem1');
@@ -187,4 +143,5 @@
     }
 
   </script>
+
 </html>

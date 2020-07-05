@@ -98,6 +98,9 @@
             margin-left:500px;
             font-size: 30px;
         }
+        .navbar-brand{
+          visibility:hidden;
+        }
 
     </style>
   </head>
@@ -105,10 +108,10 @@
     <nav class="navbar sticky-top navbar-expand-lg navbar-light" style="background-color: white;">
         <div class="container">
             <h1 class="gems-text">Gems collected : </h1>
-          <a class="navbar-brand" href="#">
+          <a class="navbar-brand" id = "gem1" href="#">
                 <img class="img-nav" src="/static/img/frame1.png" alt="">
           </a>
-          <a class="navbar-brand" href="#">
+          <a class="navbar-brand" id = "gem2" href="#">
             <img class="img-nav" src="/static/img/frame1.png" alt="">
           </a>
         </div>
@@ -117,19 +120,55 @@
     <br/><br/><br/>
     <h1 class="test1"> <img class="img-level" src='/static/img/frame1.png'>Level 1</h1>
     <br/><br/><br/>
-    <div class="completed-left">
-        <a class="btn primary">Completed</a>
+    <div class="completed-left" name = "completed_left">
+        <a class="btn primary" onclick="completed_left(this)">Completed</a>
     </div>
     <div class="completed-right">
-        <a class="btn primary">Completed</a>
+        <a class="btn primary" onclick="completed_right(this)">Completed</a>
     </div>
-    <div class="border-one">
-      {{ t|safe }}
+    <div class="border-one" id = "div_left">
+      {{ t1|safe }}
     </div>
-    <div class="border-two">
-          {{ t|safe }}
+    <div class="border-two" id = "div_right">
+      {{ t2|safe }}
     </div>
     <br/><br/><br/><br/><br/><br/><br/><br/><br/>
     </div>
   </body>
+  <script language="JavaScript">
+    function completed_left(source){
+      var div_left = document.getElementById('div_left');
+      var div_right = document.getElementById('div_right');
+      console.log(div_left);
+      source.style.visibility='hidden';
+      div_left.style.visibility='hidden';
+      if(div_right.style.visibility == 'hidden'){
+        var gem2 = document.getElementById('gem2');
+        gem2.style.visibility = 'visible';
+        window.location.href = '/transition1';
+      }
+      else{
+        var gem1 = document.getElementById('gem1');
+        gem1.style.visibility = 'visible';
+      }
+    }
+
+    function completed_right(source){
+      var div_left = document.getElementById('div_left');
+      var div_right = document.getElementById('div_right');
+      console.log(source);
+      source.style.visibility='hidden';
+      div_right.style.visibility='hidden';
+      if(div_left.style.visibility == 'hidden'){
+        var gem2 = document.getElementById('gem2');
+        gem2.style.visibility = 'visible';
+        window.location.href = '/transition1';
+      }
+      else{
+        var gem1 = document.getElementById('gem1');
+        gem1.style.visibility = 'visible';
+      }
+    }
+
+  </script>
 </html>

@@ -29,7 +29,6 @@
         color: white;
         background-color: #A40638;
         border: none;
-        border-radius: 200px;
         height: 40px;
         width: 300px;
         cursor:pointer;
@@ -48,26 +47,43 @@
         font-family: 'Wendy One', sans-serif;
         color: white;
       }
+      .text3-div{
+        margin-left:1000px;
+        visibility: hidden;
+      }
       </style>
     <title>Exemple</title>
   </head>
   <body>
+    <form method="POST" id = "my_form">
         <div class="text1-div">
             <h3>Use my liked Tiktoks</h3>
         </div>
         <div class="input-div">
-            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="TikTok username">
+            <input type="text" class="form-control" id="exampleInputEmail1" name="username" aria-describedby="emailHelp" placeholder="TikTok username">
         </div>
         <div class="button1-div">
-            <button type="submit" class="btn-test">Go!</button>
+            <button class="btn-test" name="submit_button" value="user" onclick="Submit_Form()">Go!</button>
         </div>
         <div class="text2-div">
-            <h3>Use most popular TikToks</h3>
+            <h3>Use trending TikToks</h3>
         </div>
         <div class="button2-div">
-            <button type="submit" class="btn-test">Go!</button>
+            <button class="btn-test" name="submit_button" value="trending" onclick="Submit_Form()">Go!</button>
         </div>
-
-
+    </form>
+        <div class="text3-div" id="loading">
+            <h3>Loading ...</h3>
+        </div>
   </body>
+
+  <script language="JavaScript">
+      function Submit_Form(){
+        var form = document.getElementById("my_form");
+        var loading = document.getElementById("loading");
+        loading.style.visibility = 'visible';
+        form.submit();
+      }
+  </script>
+
 </html>

@@ -12,11 +12,17 @@ for tiktok in trending:
     print(tiktok['desc'])
     print(tiktok['video'])
 """
+"""
 username = "amberbamber88"
 #username = "tiktok"
+try:
+    user = api.getUserObject(username)
+except:
+    print("here!")
+"""
+#toks = api.userLikedbyUsername(username, count=3000)
 
-toks = api.userLikedbyUsername(username, count=3000)
-
+#print(user)
 #user = api.getUserObject(username)
 #user = api.getUser(username)
 #print(user)
@@ -43,6 +49,11 @@ for tiktok in toks:
                 print(i['hashtagName'])
 #print(len(trending))
 print("final", count)
+"""
+
+
+
+
 """
 workout_tags = ["keepingactive", "fitness", "indoorworkout", "abs", "challenge", "athomeworkout", "glutes",
                 "hips", "legday", "workout", "thicc", "fitnessmotivation", "gains", "strong", "weightlossjourney"]
@@ -80,6 +91,16 @@ for t in saved_tiktoks:
         print("error")
     else:
         db.append(resp.json()['html'])
+
+print(len(db))
+"""
+
+
+
+tok = api.byHashtag('workout', count=1)
+
+print(tok)
+
 
 """
 count = 30
