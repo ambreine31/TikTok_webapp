@@ -3,9 +3,11 @@ import random
 import requests
 from TikTokApi import TikTokApi
 import pickle
+import time
+from selenium import webdriver
 api = TikTokApi()
 
-
+#driver = webdriver.Chrome('/chromedriver') 
 class User:
     def __init__(self, id, username, password):
         self.id = id
