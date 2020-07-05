@@ -97,11 +97,18 @@ print(len(db))
 
 
 
-tok = api.byHashtag('workout', count=1)
+toks = api.byHashtag('workout', count=1)
 
-print(tok)
-
-
+#print(toks)
+for tiktok in toks:
+    #print(tiktok)
+    #print(tiktok['itemInfos']['text'])
+    #print(tiktok['textExtra'])
+    #print(tiktok)
+    t = api.getTikTokById(tiktok['itemInfos']['id'])
+    print(t)
+    print(t[itemInfo][itemStruct][author])
+    #print(t['author']['uniqueId'])
 """
 count = 30
 

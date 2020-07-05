@@ -70,7 +70,6 @@ def Get_TikToks(toks):
     print("here")
     pickle.dump( db_f, open( "db.p", "wb" ) )
 
-
 @app.route("/", methods=['GET', 'POST'])
 def login():
     if request.method == 'POST':
@@ -89,12 +88,6 @@ def login():
             except:
                 print('user error')
                 return redirect('/')
-        elif(option == "trending"):
-            trending = api.trending(count=400)
-            Get_TikToks(trending)
-            session['user_id'] = 1
-            #session['db'] = db
-            return redirect(url_for('level1'))
     return render_template('login.html')
 
 @app.route("/level1")
